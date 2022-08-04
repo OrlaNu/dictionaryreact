@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import "./Dictionary.css";
 
 export default function Dictionary(){
@@ -33,3 +33,6 @@ export default function Dictionary(){
 // search(event) - recieves the event and prevents default behaviour which is reloading the page on submit
 // useState is used as the value will change within the lifecycle of the component
 // handleKeywordChange sets/updates the state of keyword to event.target.value of the searched word. Value of searched word is storded in the state
+// API doc https://dictionaryapi.dev/ 
+// Handle response function gets the response from axios and API call
+// axios added for API call. promised-based HTTP client for JavaScript. It has the ability to make HTTP requests from the browser and handle the transformation of request and response data
