@@ -8,7 +8,7 @@ function App() {
       <header>
       </header>
       <main className='Main'>
-        <Dictionary />
+        <Dictionary defaultKeyword="Sun"/>
       </main>
       <footer className='App-footer'>
         Coded by Órla

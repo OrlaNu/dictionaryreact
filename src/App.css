@@ -1,3 +1,14 @@
+body {
+    background: #ecfffb;
+}
+a {
+    color: #2d767f;
+}
+
+.App-header {
+    margin: 30px 0;
+}
+
 .App-footer {
     text-align: center;
     margin: 30px 0px;
@@ -5,4 +16,5 @@
 
 .Main {
     text-align: center;
+    margin: 30px 0px;
 }
