@@ -6,15 +6,29 @@
     margin: 20px 0;
 }
 
+.Dictionary .Search{
+    text-align: center;
+}
+
 .Dictionary input{
-    width: 60%;
+    width: 50%;
     padding: 6px 4px;
     border: 1px solid; 
     border-radius: 6px;
     border-color: #2d767f;
 }
 
+.Dictionary input:focus{
+    color: #1e6262;
+}
+
 .Dictionary .hint {
     font-size: 11px;
     margin-top: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    font-style: bold;
+    color: #1e6262;
 }

@@ -5,6 +5,11 @@ a {
     color: #2d767f;
 }
 
+.App{
+    max-width: 960px;
+    margin: 0 auto; 
+}
+
 .App-header {
     margin: 30px 0;
 }
@@ -15,6 +20,5 @@ a {
 }
 
 .Main {
-    text-align: center;
     margin: 30px 0px;
 }
