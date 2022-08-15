@@ -2,21 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
 import Result from "./Results";
+import Photos from "./Photos";
 
-export default function Dictionary(props){
+export default function Dictionary(props) {
     let [keyword, setKeyword] = useState(props.defaultKeyword);
     let [results, setResults] = useState(null);
     let [loaded, setLoaded] = useState(false);
+    let [photos, setPhotos] = useState(null);
 
     function handleResponse(response){
-        console.log(response.data[0]);
         setResults(response.data[0])
+    }
+
+    function handlePexelsResponse(response){
+        setPhotos(response.data.photos);
     }
 
     function search() {
         let apiUrl =`https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-        console.log(apiUrl);
         axios.get(apiUrl).then(handleResponse);
+
+        let pexelsApiKey = "563492ad6f91700001000001c674ae1454ba437b9652dd0aa11fb552";
+        let pexelsApiUrl =`https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
+        let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+        axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
     }
     
     function handleSubmit(event) {
@@ -42,6 +51,7 @@ export default function Dictionary(props){
                 </form>
             </section>
             <Result results={results} />
+            <Photos photos={photos} />
             </div>
         );
     } else {
@@ -62,3 +72,5 @@ export default function Dictionary(props){
 // State tracks the content of word typed by the user
 // setResults is the function that changes content of the state. Results state is updated everytime we get a response from the API
 // When ever the state updates the component is recompiled
+// Authenticating through headers rather than a key in the URL
+// To retreive photos set state, then in function add path in the api e.g. Photos can be found - response.data.photos
