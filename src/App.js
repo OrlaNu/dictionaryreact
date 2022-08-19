@@ -1,5 +1,7 @@
 import './App.css';
 import Dictionary from './Components/Dictionary'
+import Socials from './Components/Socials'
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         <Dictionary defaultKeyword="Sunset"/>
       </main>
       <footer className='App-footer'>
-        Coded by Órla
+        <Socials />
       </footer>
       </div>
     </div>

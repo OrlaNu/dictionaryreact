@@ -28,7 +28,11 @@
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     font-style: bold;
     color: #1e6262;
+}
+
+a {
+    text-align: center;
 }
